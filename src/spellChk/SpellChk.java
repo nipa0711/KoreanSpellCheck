@@ -65,12 +65,11 @@ public class SpellChk {
 			result[i] = word[0];
 			result[i] = result[i].replaceAll("[^ㄱ-ㅎ|가-힣|' ']", "");
 			int cnt = 0;
-						
+
 			for (int j = 0; j < wordCnt; j++) {
-				if(result[i].replaceAll(" ", "").equals(originalWord[j])) {
+				if (result[i].replaceAll(" ", "").equals(originalWord[j])) {
 					originalWord[cnt] = result[i];
-				}
-				else if (Math.abs(originalWord[j].hashCode() - result[i].hashCode()) < 10000) {
+				} else if (Math.abs(originalWord[j].hashCode() - result[i].hashCode()) < 10000) {
 					originalWord[cnt] = result[i];
 				}
 				cnt++;
